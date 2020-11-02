@@ -42,7 +42,13 @@ class HomeViewController : FormViewController {
             Section() {
                 $0.header = HeaderFooterView<EurekaLogoView>(.class)
             }
-
+            
+            <<< ButtonRow("Vanilla TableViewController") {
+                $0.title = $0.tag
+                $0.presentationMode = .show(controllerProvider: .callback(builder: { () -> UIViewController in
+                    return VanillaTableViewController(style: .grouped)
+                }), onDismiss: nil)
+            }
                 <<< ButtonRow("Rows") {
                         $0.title = $0.tag
                         $0.presentationMode = .segueName(segueName: "RowsExampleViewControllerSegue", onDismiss: nil)

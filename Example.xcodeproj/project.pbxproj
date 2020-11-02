@@ -41,6 +41,7 @@
 		8F325069205AAF1E006AF0A6 /* SwipeActionsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F325068205AAF1E006AF0A6 /* SwipeActionsController.swift */; };
 		8F32506B205AAF66006AF0A6 /* PlainTableViewExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F32506A205AAF66006AF0A6 /* PlainTableViewExample.swift */; };
 		D4ACF9132074B52200AEA952 /* EmojiCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D4ACF9122074B52200AEA952 /* EmojiCell.xib */; };
+		F25C577A254CA7AA00B33AB6 /* VanillaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F25C5779254CA7A900B33AB6 /* VanillaTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -133,6 +134,7 @@
 		8F325068205AAF1E006AF0A6 /* SwipeActionsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeActionsController.swift; sourceTree = "<group>"; };
 		8F32506A205AAF66006AF0A6 /* PlainTableViewExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlainTableViewExample.swift; sourceTree = "<group>"; };
 		D4ACF9122074B52200AEA952 /* EmojiCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EmojiCell.xib; sourceTree = "<group>"; };
+		F25C5779254CA7A900B33AB6 /* VanillaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VanillaTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -279,6 +281,7 @@
 				8F32505E205AAC8E006AF0A6 /* InlineRowsExample.swift */,
 				8F325060205AACB9006AF0A6 /* ListSectionsController.swift */,
 				8F325066205AAD7A006AF0A6 /* MultivaluedExamples.swift */,
+				F25C5779254CA7A900B33AB6 /* VanillaTableViewController.swift */,
 				8F325056205AABDB006AF0A6 /* NativeEventExample.swift */,
 				8F325054205AABA6006AF0A6 /* NavigationAccessoryController.swift */,
 				8F32506A205AAF66006AF0A6 /* PlainTableViewExample.swift */,
@@ -445,6 +448,7 @@
 				8F325053205AAB6F006AF0A6 /* FieldRowCustomizationController.swift in Sources */,
 				8F325051205AAB35006AF0A6 /* CustomCellsViewController.swift in Sources */,
 				8F325067205AAD7A006AF0A6 /* MultivaluedExamples.swift in Sources */,
+				F25C577A254CA7AA00B33AB6 /* VanillaTableViewController.swift in Sources */,
 				8F325061205AACB9006AF0A6 /* ListSectionsController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

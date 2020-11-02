@@ -21,6 +21,9 @@ class NativeEventFormViewController : FormViewController {
 
         navigationItem.leftBarButtonItem?.target = self
         navigationItem.leftBarButtonItem?.action = #selector(NativeEventFormViewController.cancelTapped(_:))
+        
+        // uncomment and notice the difference
+//         self.defaultScrollPosition = .top
     }
 
     private func initializeForm() {
@@ -160,23 +163,30 @@ class NativeEventFormViewController : FormViewController {
         }
 
         form +++
-
             PushRow<EventState>("Show As") {
                 $0.title = "Show As"
                 $0.options = EventState.allCases
         }
 
         form +++
-
-            URLRow("URL") {
+            Section(header: "Last Section",
+                    footer: .loremIpsum)
+            
+            <<< URLRow("URL") {
                 $0.placeholder = "URL"
             }
-
+            
             <<< TextAreaRow("notes") {
                 $0.placeholder = "Notes"
                 $0.textAreaHeight = .dynamic(initialTextViewHeight: 50)
-        }
-
+            }
+        
+        form +++
+            TextAreaRow("last") {
+                $0.placeholder = "last"
+                $0.textAreaHeight = .dynamic(initialTextViewHeight: 50)
+                
+            }
     }
 
     @objc func cancelTapped(_ barButtonItem: UIBarButtonItem) {
@@ -212,4 +222,16 @@ class NativeEventFormViewController : FormViewController {
         case busy
         case free
     }
+}
+
+extension String {
+    static var loremIpsum: String = """
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer consequat laoreet sem a elementum. Curabitur condimentum scelerisque purus, a tincidunt ligula molestie eget. In hac habitasse platea dictumst. Proin ullamcorper ultrices rhoncus. Nulla eget ante in ligula tristique consectetur quis scelerisque tortor. In sit amet sagittis leo. Vivamus aliquet cursus felis, vitae consectetur nulla. Nullam ipsum lorem, suscipit id consectetur id, luctus in arcu. Proin tincidunt sit amet mauris eget tristique. Etiam finibus dolor sed nulla iaculis lacinia. Pellentesque nec tempor purus, vel feugiat nibh. Cras feugiat vestibulum est, a vehicula neque facilisis vitae. Nunc cursus, augue ac elementum elementum, arcu lectus maximus nunc, eget sollicitudin odio purus eget ex. Curabitur eget scelerisque justo. Morbi a efficitur arcu. Praesent arcu diam, tincidunt quis facilisis ac, luctus eget orci.
+
+Aenean eget interdum mauris. Curabitur purus risus, lobortis venenatis hendrerit non, semper nec eros. Pellentesque lacinia sagittis faucibus. Proin est orci, aliquam ac odio non, lacinia pulvinar diam. Sed orci magna, laoreet in tincidunt non, finibus quis sapien. Duis commodo pretium iaculis. Donec bibendum nisi dui, et volutpat velit porta vel. Donec facilisis sagittis odio nec cursus. Curabitur imperdiet aliquet ante at mattis. Vestibulum facilisis vestibulum dolor tempus placerat. Aliquam dapibus maximus neque, et efficitur felis sagittis at. Duis vitae erat eleifend turpis tincidunt vestibulum ut ut elit. Vivamus ut augue eget ligula laoreet euismod quis non risus.
+
+Curabitur ornare ex magna, et tempus enim laoreet ut. Nulla aliquet, diam vel fringilla sagittis, est est luctus lectus, non faucibus nulla lacus in arcu. Fusce dignissim turpis a ornare maximus. Curabitur auctor malesuada lorem, imperdiet tempor nisl accumsan eget. Ut sed sem tellus. Nam leo felis, eleifend in egestas non, facilisis at ipsum. Integer pharetra turpis vitae nisl dignissim, ut elementum odio ullamcorper. Etiam ut auctor augue. Nunc egestas magna purus. Aenean finibus sem nec augue ornare luctus. Fusce viverra porta est at posuere.
+
+Pellentesque rutrum ipsum dignissim, dapibus elit ac, consectetur massa. Aliquam ut risus semper, sodales ipsum vitae, vehicula tortor. Aliquam convallis euismod tincidunt. Pellentesque id ex leo. Nullam finibus accumsan est at tempus. Cras fringilla tristique ipsum, quis consequat mi porttitor eu. Morbi dapibus odio ut dui facilisis, sed suscipit nisi tincidunt. Sed ornare eros sed mattis viverra. Nulla facilisi. Phasellus at fringilla urna. Integer vestibulum bibendum eros, quis egestas erat mattis vel. Vivamus id posuere sem. Morbi id lacus pretium, blandit dui eu, viverra felis. Cras sed dolor mi. Sed aliquam dictum quam in laoreet. Praesent venenatis finibus dui, in dictum mi gravida ac.
+"""
 }
